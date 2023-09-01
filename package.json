@@ -1,0 +1,15 @@
+{
+  "name": "starlightlmy.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/starlightlmy/starlightlmy.github.io.git",
+  "author": "starlightlmy <2573545674@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "serve": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider &&vue-cli-service build",
+    
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
