@@ -26,7 +26,14 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 ## section 1
 
+<<<<<<< HEAD
 123455
+=======
+```
+def hello():
+  hello!
+```
+>>>>>>> 095952fd24aa618a1f04568501fc5b9f605ec13c
 
 ## section 2
 
