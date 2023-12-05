@@ -48,4 +48,5 @@ cannot load such file -- webrick (LoadError)
 * `git add .`  将本地修改暂存
 * `git commit -m "新改的地方，文字说明"`
 * `git push origin [branch_name]` push 到网页里，branch_name 我的是 main
-做完这些才能在网站上看到内容的更新。
+
+做完这些才能在网站上看到内容的更新
