@@ -3,6 +3,7 @@ layout: post
 title: 使用 Github Pages + jekyll 模板 搭建的个人博客
 subtitle: 我的第一篇 blog~
 categories: 技术随笔
+tags: [Github Pages, jekyll]
 ---
 之前一直想要比较 Geek 的博客，很早就了解到了 Github Pages。因为各种原因从大二鸽到了大四。。。。
 总之这是这个网站上的第一篇博文~
