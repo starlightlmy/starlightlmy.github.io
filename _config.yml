@@ -24,7 +24,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: s t a r l i g h t
+title: s t a r l i g h t 
 email: starlightlmy@qq.com
 author: starlightlmy
 # theme: owner/name --> Don't forget to remove/comment the gem-based theme option
