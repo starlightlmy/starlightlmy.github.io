@@ -212,6 +212,7 @@ yat:
 # highlighter: none
 markdown: kramdown
 kmarkdown:
+  math_engine: MathJax
   input: GFM
 
 plugins:
