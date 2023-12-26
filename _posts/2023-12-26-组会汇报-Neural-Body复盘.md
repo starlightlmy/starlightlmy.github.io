@@ -5,6 +5,60 @@ subtitle:
 categories: 组会
 tags: [Neural Body]
 ---
+## Neural Body 原理
+### Motivation
+论文希望生成动态人体的自由视角视频，这有很多应用，包括电影工业，体育直播和远程视频会议
+现在效果最好的视角合成方法主要是NeRF [3] 这个方向的论文，但他们有两个问题：
+1. 需要非常稠密视角来训练视角合成网络。比如NeRF论文中，一般用了100多个视角来训练网络。
+2. NeRF只能处理静态场景。现在大部分视角合成工作是对于每个静态场景训一个网络，对于动态场景，上百帧需要训上百个网络，这成本很高
+
+### Method
+一共有 5 个基本的 steps。
+
+1.论文定义了一组离散的local latent codes。为了摆放这些latent codes，需要对这一帧预测一个人的粗糙的human mesh，比如SMPL模型。
+
+首先补充一下 SMPL 这个前置知识：SMPL是一个基于皮肤顶点的模型，它是由形状参数、姿势参数和相对于SMPL坐标系统的刚性变换的函数定义的。为了通过人体姿势控制潜在编码的空间位置，我们将这些潜在编码锚定到一个可变形的人体模型（SMPL）。具体而言，我们在SMPL模型的顶点上定义了一组潜在编码Z = {z1, z2, ..., z6890}。
+
+那么把编码嵌入在 SMPL 的顶点里，就有了 **structured latent codes**
+
+然后再为这个SMPL指定 shape 和 post参数 St
+
+2.因为上一步的 latent code 是非常稀疏的，只有6890，直接线性插值会导致很多 zero vectors。
+
+作者想到的解决办法是：使用稀疏卷积神经网络，提取不同尺度下的 latent code 特征，有了特征向量 feature_volume
+
+把空间直角坐标系下的坐标转成体素坐标系下的坐标，非空体素的特征取为体素块内所有非零 latent code 的均值
+
+3.有了 feature_volume，给定空间内任意一个点的坐标，先把它转成体素坐标系下的坐标后，都可以通过插值来算出它的 latent code 值
+
+把任意点的 latent code 输入 MLP 里回归 $$\sigma, RGB$$
+
+4.Render 
+
+同 NeRF
+
+5.Train
+
+loss function 同 NeRF
+
+### Experiment
+#### Dataset
+Results on the ZJU-MoCap dataset(sparse multi-view video)
+Results on monocular videos(monocular video)
+#### Task
+**Novel view synthesis**
+
+Metrics
+- PSNR(峰值信噪比)
+- SSIM(结构相似性指数)
+
+这两个指标都较之前的 sota 方法有较大提升
+
+**3D reconstruction**
+
+Metrics
+- 只提供定性结果，因为没有真实的人体3D数据
+
 ## 读论文
 ### 经历
 论文一共看了差不多三遍。
