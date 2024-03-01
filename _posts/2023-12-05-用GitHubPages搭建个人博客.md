@@ -38,6 +38,8 @@ clone 地址：
 4. 命令行输入 `gem install github-pages`
 安装完成，输入 `jekyll s` ，可以在 `127.0.0.1:4000` 生成一个本地的预览效果，这时就可以看到我们博客的界面了~
 
+如果出现 `You have already activated concurrent-ruby 1.2.3, but your Gemfile requires concurrent-ruby 1.2.2. Prepending ``bundle exec`` to your command may solve this. (Gem::LoadError)` 这个报错，预览本地的效果需要使用 `bundle exec jekyll s` 这条命令。
+
 #### 可能遇到的问题
 cannot load such file -- webrick (LoadError)
 根据[官网](https://jekyllrb.com/docs/)，输入 `bundle add webrick` 即可解决
