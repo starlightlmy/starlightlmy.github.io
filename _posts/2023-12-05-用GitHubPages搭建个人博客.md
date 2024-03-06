@@ -33,7 +33,7 @@ clone 地址：
 对照着 README.md 文件的 installation 部分，修改文件内容和执行命令。
 执行命令 `bundle` 时会出现 “无法将“bundle”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后再试一次” 字样，这时表示需要安装新的库了。
 1. 首先安装 Ruby（[Ruby 的下载地址](https://rubyinstaller.org/downloads/)，选择推荐的版本）
-2. 命令行输入 `gem install bundle`
+2. 命令行输入 `gem install bundle` ,  `bundle install`
 3. 命令行输入 `gem install jekyll`
 4. 命令行输入 `gem install github-pages`
 安装完成，输入 `jekyll s` ，可以在 `127.0.0.1:4000` 生成一个本地的预览效果，这时就可以看到我们博客的界面了~
