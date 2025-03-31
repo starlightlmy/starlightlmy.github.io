@@ -34,7 +34,7 @@ tags: [3DGS]
 
 运行程序前需下载 colmap：
 
-```cpu 版本
+```cpu版本
 conda install conda-forge::colmap
 ```
 
