@@ -30,7 +30,7 @@ tags: [3DGS]
 
 ### 1. Images to SfM data.
 
-原始数据是关于场景的 multi view images, 通过 **convert.py** 即可获得 3DGS 的 initialized SfM data.
+原始数据是关于场景的 multi view images, 通过 **convert.py** 即可获得 3DGS 的 initialized SfM data，是 /sparse/0/ 中的 point3D 文件。
 
 运行程序前需下载 colmap：
 
@@ -39,5 +39,8 @@ conda install conda-forge::colmap
 ```
 
 ### 2. SfM data to 3DGS model.
+
+/new_data/liumengyin/3DGS/gaussian-splatting/scene/gaussian_model.py  中的  create_from_pcd 函数
+从 SfM 点云创建 3DGS 可学习的参数
 
 
