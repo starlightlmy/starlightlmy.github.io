@@ -14,11 +14,6 @@ tags: [3DGS]
 3. 预测和优化 3D 高斯椭球各属性的 network。
 4. 从 3D 高斯投影产生特定视角下的 renders。
 
-### 1. 输入
-
-
-
-
 
 ## 代码
 
@@ -43,4 +38,6 @@ conda install conda-forge::colmap
 /new_data/liumengyin/3DGS/gaussian-splatting/scene/gaussian_model.py  中的  create_from_pcd 函数
 从 SfM 点云创建 3DGS 可学习的参数
 
+### 3. & 4. 
 
+后面就很简单了
